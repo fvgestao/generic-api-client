@@ -1,5 +1,5 @@
 {
-    "name": "abdala/generic-api-client",
+    "name": "fvgestao/generic-api-client",
     "homepage": "http://abda.la",
     "description": "Generic API Client for PHP",
     "keywords": ["api","generic","base"],
