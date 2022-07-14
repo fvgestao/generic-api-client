@@ -6,7 +6,6 @@
 namespace Api;
 
 use Psr\Http\Message\RequestInterface;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Promise\FulfilledPromise;
 
 //-----------------------------------------------------------------------------
@@ -266,14 +265,7 @@ function describe_type($input)
  */
 function default_http_handler()
 {
-    $version = (string) ClientInterface::VERSION;
-    if ($version[0] === '5') {
-        return new \Api\Handler\GuzzleV5\GuzzleHandler();
-    } elseif ($version[0] === '6') {
-        return new \Api\Handler\GuzzleV6\GuzzleHandler();
-    } else {
-        throw new \RuntimeException('Unknown Guzzle version: ' . $version);
-    }
+    return new \Api\Handler\GuzzleV6\GuzzleHandler();
 }
 
 /**
